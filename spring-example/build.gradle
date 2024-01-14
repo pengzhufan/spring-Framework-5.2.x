@@ -1,0 +1,18 @@
+plugins {
+    id 'java'
+}
+
+group 'org.springframework'
+version '5.2.19.BUILD-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    optional(project(":spring-context"))  // for JndiDataSourceLookup
+}
+
+test {
+    useJUnitPlatform()
+}
