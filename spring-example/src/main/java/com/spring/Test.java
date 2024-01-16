@@ -2,6 +2,9 @@ package com.spring;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+/**
+ * @author pengzhufan
+ */
 public class Test {
 	public static void main(String[] args) {
 		AnnotationConfigApplicationContext context=new AnnotationConfigApplicationContext();
