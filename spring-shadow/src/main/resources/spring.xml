@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:p="http://www.springframework.org/schema/p"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="adao" scope="singleton" class="com.shadow.mybatisUtils.DaoFactoryBean">
+	<property name="mapperInterface" value="com.shadow.dao.ADao" />
+	<!--		<property name="sqlSessionFactory" ref="sqlSessionFactory" />-->
+</bean>
+
+	<bean id="bdao" class="com.shadow.mybatisUtils.DaoFactoryBean">
+		<property name="mapperInterface" value="com.shadow.dao.BDao" />
+		<!--		<property name="sqlSessionFactory" ref="sqlSessionFactory" />-->
+	</bean>
+	<bean id="d" class="com.shadow.beans.D">
+	</bean>
+
+	<!--填充属性  手动注入-->
+	<bean id="c" class="com.shadow.beans.C" init-method="printf">
+		<property name="d" ref="d"></property>
+
+	</bean>
+
+
+<!--	<bean id="b" class="com.shadow.example.Compound.B">-->
+<!--		<property name="c" ref="c"></property>-->
+<!--	</bean>-->
+<!--	<bean id="c" class="com.shadow.example.Compound.C">-->
+<!--		<property name="d" ref="d"></property>-->
+<!--	</bean>-->
+<!--	<bean id="d" class="com.shadow.example.Compound.D">-->
+<!--	</bean>-->
+
+<!--	<bean id="a" class="com.shadow.example.Compound.A">-->
+<!--		<property name="b" ref="b"></property>-->
+<!--		<property name="b.c.d.age" value="123"></property>-->
+<!--	</bean>-->
+
+
+<!--		<bean id="b" class="com.shadow.example.Compound.B">-->
+<!--			<property name="c" ref="c"></property>-->
+<!--		</bean>-->
+
+
+</beans>
